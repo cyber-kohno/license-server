@@ -2,6 +2,8 @@ import "dotenv/config";
 import http from "http";
 import { issueLicenseKey } from "./issue-license.mjs";
 
+// curl -X POST http://localhost:3000/issue -H "Content-Type: application/json" -d "{\"product\":\"analyzer-pro\",\"features\":[\"core\",\"advanced\"]}"
+
 const server = http.createServer(async (req, res) => {
   if (req.method === "POST" && req.url === "/issue") {
     let body = "";
